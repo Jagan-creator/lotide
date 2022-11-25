@@ -8,8 +8,19 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-// function below is supposed to take in two objects and return a true value if they match and a false value if they do not
+// EQUAL ARRAYS FUNCTION
+const eqArrays = function(array1, array2) {
+  if (array1.length !== array2.length) {
+    return false;
+  }
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i])
+      return false;
+  }
+  return true
+};
 
+// EQUAL OBJECTS FUNCTION
 const eqObjects = function(object1, object2) {
   // set out some variables at the start of function to help simplify the code and make things easier to read/write
   
@@ -25,7 +36,7 @@ const eqObjects = function(object1, object2) {
 
   // now setup a for if scenario that involves using isArray so we can compare them to return an appropriate value
 
-
+  
 };
 
 // running test conditions to make sure that the objects when ran through assertEqual do not function as intended
