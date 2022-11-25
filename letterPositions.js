@@ -21,19 +21,20 @@ const eqArrays = function(array1, array2) {
 
 // LETTER POSITION FUNCTION
 const letterPositions = function(sentence) {
-  const results = {};
-  for (const letter of sentence) {
-    if (letter !== " ") {
-      if (results[letter]) {
-        results[letter] += 1;
+  const results = {};                           // defined an empty array
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] !== " ") {                  // making sure to exclude spaces
+      if (results[sentence[i]]) {
+        results[sentence[i]].push(i);           // pushing the index of sentence[i] to the new object in results
       } else {
-        results[letter] = 1;
+        results[sentence[i]] = [i];             // all else results in comparison to previous if statement
       }
     }
   }
   return results;
-};
+}
 
 // TESTING PARAMATERS
-console.log();
-console.log();
+console.log(letterPositions("hello"));
+
+console.log(assertArraysEqual((letterPositions("hello")).e, [1]));
