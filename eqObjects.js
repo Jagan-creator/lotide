@@ -22,9 +22,9 @@ const eqArrays = function(array1, array2) {
 
 // EQUAL OBJECTS FUNCTION
 const eqObjects = function(object1, object2) {
+
   // set out some variables at the start of function to help simplify the code and make things easier to read/write
   
-  let equalObjects = false;                   // this will help us compare outputs later in the function
   let insert1 = Object.keys(object1);         // easier to write out the Object.keys method here
   let insert2 = Object.keys(object2);         // same as above but just for object2 now
 
@@ -32,18 +32,29 @@ const eqObjects = function(object1, object2) {
   
   if (insert1.length !== insert2.length) {
     return false;
+  } else {
+    for (const key in object1) {
+      if (Array.isArray(object1[key])) {
+        if ((!eqArrays(object1[key], object2[key])) === false) {
+          return false;
+        }
+      } else if (typeof object1[key] === "object") {
+        if ((!eqObjects(object1[key], object2[key])) === false) {
+          return false;
+        }
+      } else if (object1[key] !== object2[key]) {
+        return false;
+      }
+    }
+    return true;
   }
-
-  // now setup a for if scenario that involves using isArray so we can compare them to return an appropriate value
-
-  
 };
 
-// running test conditions to make sure that the objects when ran through assertEqual do not function as intended
+// TEST CONDITIONS
+const test1 = { number: 1, number: 2 };
+const test2 = { number: 1, number: 2 };
+console.log(assertEqual((eqObjects(test1, test2)), true));
 
-const shirtObject = { color: "red", size: "medium" };
-const anotherShirtObject= { size: "medium", color: "red" };
-console.log(assertEqual(shirtObject , anotherShirtObject));
-
-const longSleeveShirtObject= { size: "medium", color: "red", sleeveLength: "long" };
-console.log(assertEqual(shirtObject , longSleeveShirtObject));
+const test3 = { word: "hello", word: "working", word: "lighthouse" };
+const test4 = { word: "hello", word: "working", word: "lighthouse" };
+console.log(assertEqual((eqObjects(test3, test4)), true));
