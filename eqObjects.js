@@ -12,12 +12,16 @@ const assertEqual = function(actual, expected) {
 
 const eqObjects = function(object1, object2) {
   // set out some variables at the start of function to help simplify the code and make things easier to read/write
+  
   let equalObjects = false;                   // this will help us compare outputs later in the function
   let insert1 = Object.keys(object1);         // easier to write out the Object.keys method here
   let insert2 = Object.keys(object2);         // same as above but just for object2 now
 
   // set an if parameter that indicates if the key length on both objects does not match it will return a false value
-
+  
+  if (insert1.length !== insert2.length) {
+    return false;
+  }
 
   // now setup a for if scenario that involves using isArray so we can compare them to return an appropriate value
 
