@@ -15,9 +15,11 @@ const bestTVShowsByGenre = {
 };
 
 const findKeyByValue = function(object1, category) {
-  // set a const in a loop for object1
-  // set parameters for if object1 is === to category
-  // return the object that matches category
+  for (const objectValue in object1) {                    // set a const in a loop for object1
+    if (object1[objectValue] === category) {              // set parameters for if object1 is === to category
+      return objectValue;                                 // return the object that matches category
+    }
+  }
 };
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+console.log(assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama"));
