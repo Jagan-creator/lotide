@@ -22,7 +22,18 @@ const eqArrays = function(array1, array2) {
 // LETTER POSITION FUNCTION
 const letterPositions = function(sentence) {
   const results = {};
-  // steps here for inputing the proper data for results
+  for (const letter of sentence) {
+    if (letter !== " ") {
+      if (results[letter]) {
+        results[letter] += 1;
+      } else {
+        results[letter] = 1;
+      }
+    }
+  }
+  return results;
 };
 
 // TESTING PARAMATERS
+console.log();
+console.log();
