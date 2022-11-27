@@ -21,8 +21,6 @@ const assertArraysEqual = function(firstArray, secondArray) {
 
 
 // NEW MAP FUNCTION FOR ARRAYS
-const words = ["this", "test", "is", "for", "implementing", "maps"];
-
 const map = function(array, callback) {
   const results = [];
   for (let item of array) {
@@ -31,7 +29,15 @@ const map = function(array, callback) {
   return results;
 };
 
-const results1 = map(words, word => word[0]);
+// TEST CONDITIONS
+const words1 = ["this", "test", "is", "for", "implementing", "maps"];
+const words2 = ["another", "test"];
+const words3 = ["third", "and", "final", "test"];
 
-//TESTING CONDITIONS
+const results1 = map(words1, word => word[0]);
+const results2 = map(words2, word => word[0]);
+const results3 = map(words3, word => word[0]);
+
 console.log(assertArraysEqual(results1, ([ 't', 't', 'i', 'f', 'i', 'm' ])));
+console.log(assertArraysEqual(results2, ([ 'a', 't' ])));
+console.log(assertArraysEqual(results3, ([ 't', 'a', 'f', 't' ])));
