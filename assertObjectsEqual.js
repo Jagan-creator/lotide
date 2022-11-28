@@ -26,7 +26,12 @@ const eqObjects = function(object1, object2) {
 
 // ASSERTION FOR OBJECTS FUNCTION
 const assertObjectsEqual = function(actual, expected) {
-  // empty for now
+  const inspect = require("until").inspect;               // line added from compass module
+  if (eqObjects(actual, expected)) {
+    console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+  }
 };
 
 // const assertArraysEqual = function(firstArray, secondArray) {
@@ -38,4 +43,4 @@ const assertObjectsEqual = function(actual, expected) {
 // };
 
 // TEST CONDITIONS
-console.log(`Example label: ${inspect(actual)}`);
+assertObjectsEqual(eqObjects([4, 5, 6], [4, 5, 6]), true);
