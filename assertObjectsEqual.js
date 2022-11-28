@@ -36,3 +36,15 @@ const assertObjectsEqual = function(actual, expected) {
 
 // TEST CONDITIONS
 assertObjectsEqual(eqObjects([4, 5, 6], [4, 5, 6]), true);
+assertObjectsEqual(eqObjects({
+  test1: 1,
+  test2: 2,
+  test3: 3,
+  test4: 4
+}, {
+  test1: 1,
+  test2: 2,
+  test3: 3,
+  test4: 4
+}
+), true);
