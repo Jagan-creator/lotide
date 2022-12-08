@@ -58,3 +58,5 @@ console.log(assertEqual((eqObjects(test1, test2)), true));
 const test3 = { word: "hello", word: "working", word: "lighthouse" };
 const test4 = { word: "hello", word: "working", word: "lighthouse" };
 console.log(assertEqual((eqObjects(test3, test4)), true));
+
+module.exports = eqObjects;

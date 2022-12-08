@@ -26,3 +26,5 @@ const countLetters = function(sentenceString) {
 // TEST PARAMATERS
 console.log(countLetters("This is a test to see what letters are present in this string!"));
 console.log(countLetters("We are running a second test to count letters here!"));
+
+module.exports = countLetters;

@@ -35,3 +35,5 @@ console.log(assertEqual(findKey({
   movie5:       { rating: 2 },
   movie6:  { rating: 9 }
 }, x => x.rating >= 8), "movie6"));
+
+module.exports = findKey;

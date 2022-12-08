@@ -33,3 +33,5 @@ const flatten = function(arr) {
 
 console.log(flatten([5, 8, 6, [3, 1], 2]));
 console.log(flatten([5, [9], 6, [7, 1], 1]));
+
+module.exports = flatten;

@@ -48,3 +48,5 @@ assertObjectsEqual(eqObjects({
   test4: 4
 }
 ), true);
+
+module.exports = assertObjectsEqual;
