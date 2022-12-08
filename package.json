@@ -1,0 +1,28 @@
+{
+  "name": "@jagan-creator/lotide",
+  "version": "1.0.0",
+  "description": "this is a clone of the lodash library which was used in practice to create a cariety of javascript functions",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jagan-creator/lotide.git"
+  },
+  "author": {
+    "name": "Joel Hagan"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jagan-creator/lotide/issues"
+  },
+  "homepage": "https://github.com/Jagan-creator/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^9.2.2"
+  }
+}
